@@ -4,7 +4,7 @@
   programs.git = {
     enable = true;
     userName = "campos";
-    userEmail = "nonesovile96@gmail.com";
+    userEmail = "nonesovile96@hotmail.com";
   };
 
   programs.zsh = {
@@ -19,14 +19,14 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    settings = import ./hyprland.nix;
+    settings = import ./settings-files/hyprland.nix;
   };
 
   programs.waybar = {
     enable = true;
     package = pkgs.waybar;
-    settings = import ./waybar.nix;
-    style = import ./waybar-style.nix;
+    settings = import ./settings-files/waybar.nix;
+    style = import ./styles/waybar-style.nix;
   };
 
   programs.kitty = {
@@ -38,6 +38,11 @@
       background_opacity = "0.7";
       confirm_os_window_close = 0;
     };
+  };
+
+  programs.wofi = {
+    enable = true;
+    style = import ./styles/wofi-style.nix;
   };
 
   services.mako = {

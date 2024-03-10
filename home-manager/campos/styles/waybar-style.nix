@@ -37,10 +37,14 @@ window#waybar.hidden {
 #tray,
 #mode,
 #idle_inhibitor {
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 0 10px;
   margin: 3 2 6px;
   background-color: #45484b;
+}
+
+#workspaces {
+  padding: 0 5px;
 }
 
 #workspaces button {
