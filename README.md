@@ -1,0 +1,2 @@
+# NixFlake
+My NixOS flake
