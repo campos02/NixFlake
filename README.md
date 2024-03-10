@@ -1,2 +1,2 @@
 # NixFlake
-My flake containing a configuration each device I've used NixOS in
+My flake containing a configuration for each device I've used NixOS in
