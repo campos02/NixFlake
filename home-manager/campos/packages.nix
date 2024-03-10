@@ -17,10 +17,7 @@
     grim
     slurp
     wl-clipboard
-    gcc
     qtcreator
-    cmake
-    gnumake
     google-chrome
     gnome.gnome-calculator
     vlc
