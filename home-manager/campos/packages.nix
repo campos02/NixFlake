@@ -24,5 +24,6 @@
     xfce.ristretto
     libreoffice
     mate.engrampa
+    playerctl
   ];
 }

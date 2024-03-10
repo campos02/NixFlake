@@ -33,9 +33,9 @@ window#waybar.hidden {
 #backlight,
 #network,
 #pulseaudio,
-#custom-media,
 #tray,
 #mode,
+#custom-song,
 #idle_inhibitor {
   border-radius: 5px;
   padding: 0 10px;
@@ -87,19 +87,6 @@ window#waybar.hidden {
 #pulseaudio.muted {
   background: #eed49f;
   color: #000000;
-}
-
-#custom-media {
-  background: #66cc99;
-  color: #2a5c45;
-}
-
-.custom-spotify {
-  background: #66cc99;
-}
-
-.custom-vlc {
-  background: #ffa000;
 }
 
 #temperature {

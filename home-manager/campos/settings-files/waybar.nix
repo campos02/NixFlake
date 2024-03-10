@@ -7,6 +7,7 @@
     
     modules-left = [
       "hyprland/workspaces"
+      "custom/song"
     ];
 
     modules-center = [
@@ -134,6 +135,13 @@
     "custom/power" = {
       format = " ";
       on-click = "wlogout";
+    };
+
+    "custom/song" = {
+      format = "{}";
+      exec = "playerctl -a metadata --format \"{{ status }}: {{ artist }} - {{ trunc(title, 38) }} - {{ duration(position) }}\"";
+      max-length = 60;
+      interval = 1;
     };
   };
 }
