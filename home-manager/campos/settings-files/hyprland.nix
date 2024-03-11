@@ -105,6 +105,9 @@
     # mute key
     ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
+    # play/pause key
+    ", XF86AudioPlay, exec, playerctl play-pause"
+
     # general shortcuts
     "$mod, Q, exec, kitty"
     "$mod, C, killactive, "
