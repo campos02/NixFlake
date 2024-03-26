@@ -13,7 +13,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "PC-Sala"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -43,18 +42,15 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  # Enable the X11 windowing system and sddm.
+  # Enable the X11 windowing system.
   services.xserver.enable = true;
+
+  # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm = {
     enable = true;
     autoNumlock = true;
   };
-
-  # Enable hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Make Electron apps use Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -137,7 +133,7 @@
   users.users.campos = {
     isNormalUser = true;
     description = "campos";
-    extraGroups = [ "networkmanager" "wheel" "audio" "storage" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
 
@@ -150,10 +146,6 @@
     wget
     git
     curl
-    zip
-    unzip
-    pulseaudio
-    evince
   ];
 
   # Enable Flakes and the new command-line tool
@@ -162,11 +154,8 @@
   # Enable zsh
   programs.zsh.enable = true;
 
-  # Thunar and extended functionality for it
-  programs.thunar.enable = true;
-  programs.xfconf.enable = true; # Allow preference changes
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
+  # Enable polkit
+  security.polkit.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

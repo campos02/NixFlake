@@ -9,21 +9,9 @@
     hyfetch
     discord
     spotify
-    pavucontrol
-    htop
-    wofi
-    hyprpaper
-    font-awesome
-    grim
-    slurp
-    wl-clipboard
-    qtcreator
-    google-chrome
-    gnome.gnome-calculator
+    chromium
+    libsForQt5.kcalc
     vlc
-    xfce.ristretto
     libreoffice
-    mate.engrampa
-    playerctl
   ];
 }
