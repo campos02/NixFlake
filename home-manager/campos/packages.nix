@@ -10,7 +10,6 @@
     discord
     spotify
     chromium
-    libsForQt5.kcalc
     vlc
     libreoffice
   ];
