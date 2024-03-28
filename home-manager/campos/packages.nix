@@ -5,7 +5,6 @@
   home.packages = with pkgs; [
     firefox
     vscodium
-    steam-run
     hyfetch
     discord
     spotify
