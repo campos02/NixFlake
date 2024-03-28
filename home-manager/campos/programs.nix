@@ -52,4 +52,6 @@
     borderRadius = 5;
     defaultTimeout = 3000;
   };
+
+  services.udiskie.enable = true;
 }

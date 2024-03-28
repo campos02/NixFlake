@@ -17,13 +17,9 @@
     grim
     slurp
     wl-clipboard
-    qtcreator
-    google-chrome
-    gnome.gnome-calculator
+    chromium
     vlc
-    xfce.ristretto
     libreoffice
-    mate.engrampa
     playerctl
   ];
 }

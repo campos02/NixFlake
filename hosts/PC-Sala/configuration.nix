@@ -13,7 +13,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "PC-Sala"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,6 +48,9 @@
     enable = true;
     autoNumlock = true;
   };
+
+  # Enable the Cinnamon Desktop Environment.
+  services.xserver.desktopManager.cinnamon.enable = true;
 
   # Enable hyprland
   programs.hyprland = {
@@ -137,7 +139,7 @@
   users.users.campos = {
     isNormalUser = true;
     description = "campos";
-    extraGroups = [ "networkmanager" "wheel" "audio" "storage" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     shell = pkgs.zsh;
   };
 
@@ -150,10 +152,8 @@
     wget
     git
     curl
-    zip
-    unzip
     pulseaudio
-    evince
+    lxqt.lxqt-policykit
   ];
 
   # Enable Flakes and the new command-line tool
@@ -162,11 +162,25 @@
   # Enable zsh
   programs.zsh.enable = true;
 
-  # Thunar and extended functionality for it
-  programs.thunar.enable = true;
-  programs.xfconf.enable = true; # Allow preference changes
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
+  # Enable polkit
+  security.polkit.enable = true;
+
+  # Start polkit service
+  systemd = {
+    user.services.polkit-lxqt = {
+      description = "polkit-lxqt";
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.lxqt.lxqt-policykit}/bin/lxqt-policykit-agent";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
