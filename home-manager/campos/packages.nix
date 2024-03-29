@@ -11,5 +11,8 @@
     chromium
     vlc
     libreoffice
+    xorg.xgamma
+    parcellite
+    gnome.gnome-system-monitor
   ];
 }
