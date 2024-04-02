@@ -14,5 +14,7 @@
     xorg.xgamma
     parcellite
     gnome.gnome-system-monitor
+    element-desktop
+    libsForQt5.konversation
   ];
 }
